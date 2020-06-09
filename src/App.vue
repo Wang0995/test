@@ -22,7 +22,7 @@
     padding: 0;
   }
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif,serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;

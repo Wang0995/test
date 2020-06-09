@@ -71,11 +71,6 @@
   .el-menu {
     border: none;
   }
-  /*.el-submenu .el-menu-item, .el-menu-item, .el-submenu__title {*/
-  /*  height: 30px;*/
-  /*  line-height: 30px;*/
-  /*  font-weight: 500;*/
-  /*}*/
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
   }

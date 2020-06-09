@@ -4,8 +4,7 @@
         <IndexAside ref="broAside"></IndexAside>
       </el-aside>
       <el-container>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
+        <el-main style="text-align: center; margin: auto"><img src="../../assets/logo.png"></el-main>
       </el-container>
     </el-container>
 </template>

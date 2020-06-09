@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/index.css';
+import './theme/index.css'
 import routes from './router/routes'
 import { guardRouter } from './router/methods'
 
