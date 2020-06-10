@@ -1,9 +1,6 @@
 <template>
   <div class="homeHeader">
     <div class="leftFunction">
-      <div class="operation" @click="operationMenu">
-        <i class="el-icon-s-fold"></i>
-      </div>
       <div class="logoO"></div>
       <div class="searchInput">
         <i class="el-icon-search"></i>
@@ -34,7 +31,6 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
   export default {
     name: 'indexHeader',
     data() {
@@ -43,21 +39,12 @@
       };
     },
     computed: {
-      ...mapState('body', {
-          isPc: state => state.isPc,
-      })
+
     },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       },
-        ...mapMutations('body', [
-          'SET_isPc',
-        ]),
-      operationMenu() {
-          console.log(this.$store.state.body.isPc)
-          this.$store.commit('/body/SET_isPc',false);
-      }
     }
   }
 </script>
@@ -67,6 +54,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 60px;
   }
   .leftFunction {
     display: flex;

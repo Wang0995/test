@@ -10,14 +10,14 @@
       @close="handleClose"
       :collapse="isCollapse">
       <el-menu-item class="open-close" @click="controlCollapse">
-        <i class="el-icon-menu"></i>
+        <i :class="iconName"></i>
       </el-menu-item>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span slot="title">导航一</span>
         </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
+        <el-menu-item index="1-1"> <router-link v-bind:to="'/document/test'">选项1</router-link></el-menu-item>
         <el-menu-item index="1-2">选项2</el-menu-item>
         <el-menu-item index="1-3">选项3</el-menu-item>
         <el-submenu index="1-4">
@@ -46,12 +46,19 @@
         name: 'indexAside',
         data() {
             return {
-                isCollapse: this.$store.state.body.isCollapse,
+              isCollapse: false,
+              iconName: "el-icon-caret-left"
             };
         },
         methods: {
             controlCollapse() {
-                this.isCollapse ? this.isCollapse = false : this.isCollapse = true;
+              if (this.isCollapse) {
+                this.isCollapse = false;
+                this.iconName = "el-icon-caret-left";
+              } else {
+                this.isCollapse = true;
+                this.iconName= "el-icon-caret-right";
+              }
             },
             handleOpen(key, keyPath) {
                 console.log(key, keyPath);
