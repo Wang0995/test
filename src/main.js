@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
+import store from "./store/index";
 // import 'element-ui/lib/theme-chalk/index.css';
 import './theme/index.css'
 import routes from './router/routes'
 import { guardRouter } from './router/methods'
+
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
@@ -17,7 +19,7 @@ const router = new VueRouter({
   mode: 'history'
 });
 
-// Vue.config.productionTip = false;
+//Vue.config.productionTip = false;
 
 //路由加载前调用
 router.beforeEach((to, from, next) => {
@@ -29,6 +31,7 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  router
+  router,
+  store,
 }).$mount('#app');
 

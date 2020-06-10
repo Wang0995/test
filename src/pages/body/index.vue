@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header>
-      <IndexHeader @operation="operation"></IndexHeader>
+      <IndexHeader></IndexHeader>
     </el-header>
     <el-container>
       <router-view></router-view>
@@ -24,9 +24,6 @@
           IndexHeader,
       },
       methods: {
-          operation() {
-            alert('123')
-          },
       }
   }
 </script>

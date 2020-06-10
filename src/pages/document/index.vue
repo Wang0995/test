@@ -4,7 +4,7 @@
         <IndexAside ref="broAside"></IndexAside>
       </el-aside>
       <el-container>
-        <el-main style="text-align: center; margin: auto"><img src="../../assets/logo.png"></el-main>
+        <el-main style="text-align: center; margin: auto"><img src="../../assets/logo.png" ALT="加载失败"></el-main>
       </el-container>
     </el-container>
 </template>

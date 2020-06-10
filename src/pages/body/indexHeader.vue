@@ -34,6 +34,7 @@
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
     name: 'indexHeader',
     data() {
@@ -41,12 +42,21 @@
         circleUrl: "../../assets/head.jpeg",
       };
     },
+    computed: {
+      ...mapState('body', {
+          isPc: state => state.isPc,
+      })
+    },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       },
+        ...mapMutations('body', [
+          'SET_isPc',
+        ]),
       operationMenu() {
-          this.$emit('operation');
+          console.log(this.$store.state.body.isPc)
+          this.$store.commit('/body/SET_isPc',false);
       }
     }
   }

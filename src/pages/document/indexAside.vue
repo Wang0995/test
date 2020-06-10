@@ -46,7 +46,7 @@
         name: 'indexAside',
         data() {
             return {
-                isCollapse: false
+                isCollapse: this.$store.state.body.isCollapse,
             };
         },
         methods: {
