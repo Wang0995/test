@@ -1,7 +1,6 @@
 <!--src\components\Param.vue-->
 <template>
   <div class="param">
-    <el-input></el-input>
     <input type="text" placeholder="a" size="30" v-model="UserInput" />
     <input type="button" value="Go to route" @click="GoToRoute()" />
   </div>
@@ -17,7 +16,7 @@
         },
         methods:{
             GoToRoute : function(){
-                this.$router.push({ name: 'Paramdetails', params: { id: this.UserInput }})
+                this.$router.push({ name: 'paramDetails', params: { id: this.UserInput }})
             }
         }
     }

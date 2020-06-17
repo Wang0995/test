@@ -29,4 +29,17 @@
     height: 100%;
     width: 100%;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #F13A2F;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #ededed;
+    border-radius: 5px;
+
+  }
 </style>

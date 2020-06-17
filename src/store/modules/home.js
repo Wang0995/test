@@ -2,7 +2,7 @@ import types from "./../types";
 
 const state = {
   count: 10,
-}
+};
 
 var getters = {
   count(state) {

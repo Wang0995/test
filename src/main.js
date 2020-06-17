@@ -9,10 +9,31 @@ import store from "./store/index";
 import './theme/index.css'
 import routes from './router/routes'
 import { guardRouter } from './router/methods'
-
+import echarts from 'echarts'
+import 'echarts/theme/shine'
+import 'echarts/theme/macarons2'
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
+
+//解决vue-router在版本3.0以上点击重复路由报错问题
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+};
+
+//EventBus全局
+var EventBus = new Vue();
+
+Object.defineProperties(Vue.prototype, {
+  $bus: {
+    get: function () {
+      return EventBus
+    }
+  }
+});
+
+Vue.prototype.$echarts = echarts;
 
 const router = new VueRouter({
   routes,

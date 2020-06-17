@@ -1,29 +1,41 @@
 <template>
   <div style="height: 100%">
     <el-menu
-      default-active="1-4-1"
       class="el-menu-vertical-demo"
       background-color="#fafafa"
       text-color="#808080"
       active-text-color="#f13a2f"
+      :default-active="$route.path"
       @open="handleOpen"
       @close="handleClose"
-      :collapse="isCollapse">
+      :collapse="isCollapse"
+      router>
       <el-menu-item class="open-close" @click="controlCollapse">
         <i :class="iconName"></i>
       </el-menu-item>
-      <el-submenu index="1">
+      <el-menu-item index="/document">
+        <i class="el-icon-s-promotion"></i>
+        <span slot="title">欢迎</span>
+      </el-menu-item>
+      <el-menu-item index="/document/start">
+        <i class="el-icon-s-platform"></i>
+        <span slot="title">开始</span>
+      </el-menu-item>
+      <el-submenu index="2">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
+          <i class="el-icon-menu"></i>
+          <span slot="title">学习</span>
         </template>
-        <el-menu-item index="1-1"> <router-link v-bind:to="'/document/test'">选项1</router-link></el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
-        <el-submenu index="1-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
+        <el-menu-item index="/document/router">vue-router</el-menu-item>
+        <el-menu-item index="/document/store">Vuex</el-menu-item>
+        <el-submenu index="2-4">
+          <span slot="title">组件通信方法</span>
+          <el-menu-item index="/document/refs">$refs方法</el-menu-item>
+          <el-menu-item index="/document/center">中间事件总线</el-menu-item>
+          <el-menu-item index="/document/whole">全局EventBus</el-menu-item>
+          <el-menu-item index="/document/father-child">父子组件通信</el-menu-item>
         </el-submenu>
+        <el-menu-item index="/document/echarts">Echarts</el-menu-item>
       </el-submenu>
       <el-menu-item index="2">
         <i class="el-icon-menu"></i>
@@ -32,10 +44,6 @@
       <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
       </el-menu-item>
     </el-menu>
   </div>
