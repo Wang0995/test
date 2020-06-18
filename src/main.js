@@ -12,6 +12,8 @@ import { guardRouter } from './router/methods'
 import echarts from 'echarts'
 import 'echarts/theme/shine'
 import 'echarts/theme/macarons2'
+import common from './common/methods'
+import axios from 'axios'
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
@@ -34,6 +36,8 @@ Object.defineProperties(Vue.prototype, {
 });
 
 Vue.prototype.$echarts = echarts;
+Vue.prototype.common = common;
+Vue.prototype.$axios = axios;
 
 const router = new VueRouter({
   routes,
