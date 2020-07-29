@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <BodyPage></BodyPage>
+    <router-view></router-view>
+<!--    <BodyPage></BodyPage>-->
   </div>
 </template>
 

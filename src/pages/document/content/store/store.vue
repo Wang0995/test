@@ -54,7 +54,7 @@
             ...mapMutations("dog", { dogIncrement: "increment" }),
             ...mapActions("cat", { catGrow: "grow" }),
             ...mapActions("dog", { dogGrow: "grow" }),
-            ... mapActions([
+            ...mapActions([
                 'countAdd',
                 'countDec',
                 'addAsync',

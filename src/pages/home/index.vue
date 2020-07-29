@@ -114,6 +114,9 @@
 </template>
 
 <script>
+  import { getWeather } from "../../api/test";
+  import { getSexData } from "../../api/mockApi";
+
   export default {
     data() {
       return {
@@ -133,7 +136,14 @@
       }
     },
     created() {
-
+      // getWeather({version: 'v6', appid:'89736532', appsecret:'HNw4pM0K'}).then((res) => {
+      //   this.weather = res.data;
+      // });
+      getSexData().then(res => {
+        if (res) {
+          console.log(res)
+        }
+      })
     },
     mounted() {
       const _this = this;        //声明一个变量指向Vue实例this，保证作用域一致
@@ -141,9 +151,8 @@
       this.timer = setInterval(function () {
         _this.getTime();
       }, 1000);
-      this.getWeather();
-      //this.getSportsNews();
-      //this.getHL();
+      this.getSportsNews();
+      this.getHL();
       this.getStock();
     },
     beforeDestroy() {
@@ -163,18 +172,11 @@
           seconds: time.getSeconds(),
         };
       },
-      getWeather() {
-        const _this = this;
-        this.$axios.get('https://www.tianqiapi.com/api/?version=v6&appid=89736532&appsecret=HNw4pM0K').then(function (reponse) {
-          _this.weather = reponse.data;
-        }).catch(() => {
-        });
-      },
       getSportsNews() {
         const _this = this;
         //跨域解决方案
-        this.$axios.get('http://v.juhe.cn/toutiao/index?type=tiyu&key=949553d21151a1fd24e1f98e75bbc7f6').then(function (reponse) {
-          console.log(list)
+        this.$axios.get('/api/toutiao/index?type=tiyu&key=949553d21151a1fd24e1f98e75bbc7f6').then(function (reponse) {
+          //console.log(list)
           const list = reponse.data.result.data;
           _this.news.firstTitle = list[0].title;
           _this.news.firstUrl = list[0].url;
@@ -199,7 +201,8 @@
       getStock() {
         const _this = this;
 
-        this.$axios.get('/stock/ActNews/Query?key=7318bd1e40734bb0bf290666b6d40bf8&keyword=奥巴马').then(function (reponse) {
+        this.$axios.get('/stock'+'?key=7318bd1e40734bb0bf290666b6d40bf8&keyword=奥巴马').then(function (reponse) {
+          //console.log(reponse)
         }).catch((err) => {
           console.log(err)
         })

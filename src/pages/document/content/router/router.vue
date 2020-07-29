@@ -1,10 +1,10 @@
 <template>
   <div class="docRouter">
     <div class="docRouter-link">
-      <router-link v-bind:to="'/document/router'">关于</router-link>
-      <router-link v-bind:to="'/document/router/welcome'">欢迎</router-link>
-      <router-link v-bind:to="'/document/router/param'">传参</router-link>
-      <router-link v-bind:to="'/document/router/protect'">路由守护</router-link>
+      <router-link v-bind:to="{name: 'about'}">关于</router-link>
+      <router-link v-bind:to="'/body/document/router/welcome'">欢迎</router-link>
+      <router-link v-bind:to="'/body/document/router/param'">传参</router-link>
+      <router-link v-bind:to="'/body/document/router/protect'">路由守护</router-link>
     </div>
     <div>
       <router-view></router-view>

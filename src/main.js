@@ -5,6 +5,7 @@ import App from './App'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import store from "./store/index";
+import storeTest from './store/test'
 // import 'element-ui/lib/theme-chalk/index.css';
 import './theme/index.css'
 import routes from './router/routes'
@@ -14,9 +15,17 @@ import 'echarts/theme/shine'
 import 'echarts/theme/macarons2'
 import common from './common/methods'
 import axios from 'axios'
+import Avue from '@smallwei/avue';
+import '@smallwei/avue/lib/index.css';
+import $ from 'jquery'
+import '../src/mock/index'
+import Vant from 'vant'
+import 'vant/lib/index.css'
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
+Vue.use(Avue);
+Vue.use(Vant);
 
 //解决vue-router在版本3.0以上点击重复路由报错问题
 const originalPush = VueRouter.prototype.push;
@@ -57,6 +66,6 @@ new Vue({
   components: { App },
   template: '<App/>',
   router,
-  store,
+  store: storeTest,
 }).$mount('#app');
 
