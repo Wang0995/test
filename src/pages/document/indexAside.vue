@@ -21,6 +21,10 @@
         <i class="el-icon-s-platform"></i>
         <span slot="title">开始</span>
       </el-menu-item>
+      <el-menu-item index="/body/document/test">
+        <i class="el-icon-warning"></i>
+        <span slot="title">测试</span>
+      </el-menu-item>
       <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-menu"></i>

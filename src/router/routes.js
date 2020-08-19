@@ -3,6 +3,7 @@ import HomePage from '../pages/home/index'
 import Login from '../pages/login/login3'
 import Body from '../pages/body/index'
 import Mobile from '../pages/mobile/index'
+//import Mobile from '../pages/mobile/askForLeave'
 
 const routes = [
   {
@@ -40,6 +41,9 @@ const routes = [
         }, {
           path: 'start',
           component: () => import('../pages/document/content/start/start'),
+        }, {
+          path: 'test',
+          component: () => import('../pages/document/content/test/index')
         }, {
           path: 'router',
           component: () => import('../pages/document/content/router/router'),
